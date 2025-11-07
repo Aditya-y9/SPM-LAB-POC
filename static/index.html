@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection - AI-Powered Plant Health Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>PlantCare AI</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#detect" class="nav-link" data-page="detect">Detect Disease</a></li>
+                <li><a href="#how-it-works" class="nav-link" data-page="how-it-works">How It Works</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page active">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">AI-Powered</span> Plant Disease Detection
+                </h1>
+                <p class="hero-subtitle">
+                    Protect your crops with cutting-edge machine learning technology. 
+                    Get instant disease diagnosis and treatment recommendations.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-hero primary" onclick="navigateToPage('detect')">
+                        <i class="fas fa-camera"></i> Start Detection
+                    </button>
+                    <button class="btn-hero secondary" onclick="navigateToPage('about')">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="10000">0</div>
+                        <div class="stat-label">Plants Analyzed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="95">0</div>
+                        <div class="stat-label">Accuracy %</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Disease Types</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-seedling"></i>
+                    <span>Corn</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-carrot"></i>
+                    <span>Potato</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-apple-alt"></i>
+                    <span>Tomato</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2 class="section-title">Why Choose PlantCare AI?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Results</h3>
+                    <p>Get disease detection results in seconds with our advanced AI model</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Deep Learning</h3>
+                    <p>Powered by state-of-the-art CNN architecture trained on thousands of images</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High Accuracy</h3>
+                    <p>95%+ accuracy rate in detecting plant diseases across multiple species</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access from any device - desktop, tablet, or smartphone</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your images are processed securely and not stored on our servers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Early detection helps reduce pesticide use and crop waste</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page">
+        <div class="container">
+            <div class="about-hero">
+                <h1 class="page-title">About PlantCare AI</h1>
+                <p class="page-subtitle">Revolutionizing agriculture with artificial intelligence</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-section">
+                    <div class="about-text">
+                        <h2>Our Mission</h2>
+                        <p>
+                            PlantCare AI is dedicated to helping farmers and agricultural experts detect 
+                            plant diseases early and accurately. By leveraging cutting-edge deep learning 
+                            technology, we provide a tool that can identify diseases in seconds, helping 
+                            to prevent crop loss and reduce the need for excessive pesticide use.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-leaf fa-5x"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section reverse">
+                    <div class="about-text">
+                        <h2>The Technology</h2>
+                        <p>
+                            Our system uses a Convolutional Neural Network (CNN) trained on thousands of 
+                            plant images. The model can distinguish between healthy plants and those 
+                            affected by various diseases with over 95% accuracy. The AI has been trained 
+                            to recognize patterns invisible to the human eye.
+                        </p>
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-brain"></i>
+                                <span>TensorFlow</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-network-wired"></i>
+                                <span>FastAPI</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-code"></i>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-robot fa-5x"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="supported-plants">
+                    <h2>Supported Plant Species</h2>
+                    <div class="plants-grid">
+                        <div class="plant-card">
+                            <i class="fas fa-seedling"></i>
+                            <h3>Corn</h3>
+                            <p>Common Rust Detection</p>
+                        </div>
+                        <div class="plant-card">
+                            <i class="fas fa-carrot"></i>
+                            <h3>Potato</h3>
+                            <p>Early Blight Detection</p>
+                        </div>
+                        <div class="plant-card">
+                            <i class="fas fa-apple-alt"></i>
+                            <h3>Tomato</h3>
+                            <p>Bacterial Spot Detection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detection Page -->
+    <section id="detect" class="page">
+        <div class="container">
+            <h1 class="page-title">Disease Detection</h1>
+            <p class="page-subtitle">Upload an image of a plant leaf to detect diseases</p>
+
+            <div class="detection-container">
+                <div class="upload-wrapper">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                            </svg>
+                            <p class="upload-text">Click to upload or drag and drop</p>
+                            <p class="upload-hint">PNG, JPG, JPEG (MAX. 10MB)</p>
+                        </div>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                    </div>
+
+                    <div class="preview-section" id="previewSection" style="display: none;">
+                        <div class="image-preview-container">
+                            <img id="previewImage" alt="Preview">
+                            <button class="change-image-btn" id="changeImageBtn">
+                                <i class="fas fa-sync-alt"></i> Change Image
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary btn-large" id="predictBtn" disabled>
+                        <span id="btnText"><i class="fas fa-search"></i> Analyze Plant</span>
+                        <span id="btnLoader" class="loader" style="display: none;"></span>
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-wrapper" id="resultsSection" style="display: none;">
+                    <div class="results-header">
+                        <h2><i class="fas fa-chart-bar"></i> Analysis Results</h2>
+                        <button class="btn-secondary" onclick="resetDetection()">
+                            <i class="fas fa-redo"></i> New Analysis
+                        </button>
+                    </div>
+
+                    <div class="results-grid">
+                        <div class="result-card primary-result">
+                            <div class="result-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h3>Diagnosis</h3>
+                            <div class="diagnosis-info">
+                                <div class="info-row">
+                                    <span class="label">Plant Type:</span>
+                                    <span class="value" id="plantType"></span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Disease:</span>
+                                    <span class="value disease-name" id="disease"></span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Confidence:</span>
+                                    <div class="confidence-bar-container">
+                                        <div class="confidence-bar" id="confidenceBar"></div>
+                                        <span class="confidence-text" id="confidence"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result-card chart-card">
+                            <h3><i class="fas fa-chart-pie"></i> Probability Distribution</h3>
+                            <canvas id="probabilityChart"></canvas>
+                        </div>
+
+                        <div class="result-card chart-card">
+                            <h3><i class="fas fa-chart-bar"></i> Detailed Analysis</h3>
+                            <canvas id="barChart"></canvas>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Page -->
+    <section id="how-it-works" class="page">
+        <div class="container">
+            <h1 class="page-title">How It Works</h1>
+            <p class="page-subtitle">Understanding the AI-powered detection process</p>
+
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>1. Upload Image</h3>
+                        <p>Take a clear photo of the affected plant leaf and upload it to our platform. The image should be well-lit and focused on the leaf.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>2. Image Processing</h3>
+                        <p>Our system preprocesses the image, resizing and normalizing it to match the format our AI model was trained on.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>3. AI Analysis</h3>
+                        <p>The Convolutional Neural Network analyzes the image through multiple layers, extracting features and patterns to identify diseases.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>4. Results & Recommendations</h3>
+                        <p>Receive instant results with confidence scores, visual charts, and actionable recommendations for treatment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="model-architecture">
+                <h2>Model Architecture</h2>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <div class="layer-box">Input Layer<br><span>256x256x3</span></div>
+                    </div>
+                    <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="arch-layer">
+                        <div class="layer-box">Conv2D<br><span>32 filters</span></div>
+                        <div class="layer-box">MaxPooling</div>
+                    </div>
+                    <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="arch-layer">
+                        <div class="layer-box">Conv2D<br><span>16 filters</span></div>
+                        <div class="layer-box">MaxPooling</div>
+                    </div>
+                    <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="arch-layer">
+                        <div class="layer-box">Flatten</div>
+                        <div class="layer-box">Dense<br><span>8 units</span></div>
+                    </div>
+                    <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="arch-layer">
+                        <div class="layer-box">Output<br><span>3 classes</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Page -->
+    <section id="statistics" class="page">
+        <div class="container">
+            <h1 class="page-title">Platform Statistics</h1>
+            <p class="page-subtitle">Real-time insights and performance metrics</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Analyses</h3>
+                        <div class="stat-value">10,247</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 12% this month
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Accuracy Rate</h3>
+                        <div class="stat-value">95.8%</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 2% improvement
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Active Users</h3>
+                        <div class="stat-value">1,523</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 24% growth
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Avg Response Time</h3>
+                        <div class="stat-value">1.2s</div>
+                        <div class="stat-change negative">
+                            <i class="fas fa-arrow-down"></i> 0.3s faster
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-section">
+                <div class="chart-container-large">
+                    <h2>Disease Detection Distribution</h2>
+                    <canvas id="diseaseDistChart"></canvas>
+                </div>
+
+                <div class="chart-container-large">
+                    <h2>Monthly Analysis Trends</h2>
+                    <canvas id="trendsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-leaf"></i> PlantCare AI</h3>
+                <p>Advanced plant disease detection powered by artificial intelligence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home" onclick="navigateToPage('home')">Home</a></li>
+                    <li><a href="#about" onclick="navigateToPage('about')">About</a></li>
+                    <li><a href="#detect" onclick="navigateToPage('detect')">Detect Disease</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> info@plantcareai.com</p>
+                <p><i class="fas fa-phone"></i></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PlantCare AI. Powered by SPM LAB</p>
+        </div>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
